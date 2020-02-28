@@ -24,7 +24,6 @@ module.exports = {
     try{
       const point = await PointModel.create(req.body);
 
-      req.io.emit('NewPoint', point)
       return res.status('200').json({ point });
     }catch( err ){
       return res.status('500').json(err);
